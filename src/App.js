@@ -1,36 +1,32 @@
-import './App.css';
-import { FormGroup, Input, Button, Container, Typography } from '@mui/material';
 import React from 'react';
+import './output.css';
+import HomeIcon from '@mui/icons-material/Home';
+import HeadphonesIcon from '@mui/icons-material/Headphones';
+import PodcastsIcon from '@mui/icons-material/Podcasts';
+import { FormGroup, Input } from '@mui/material';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import SettingsIcon from '@mui/icons-material/Settings';
+
 
 function App() {
-
-const onSubmit = (e) => {
- const EValues = e.target.value
-console.log(EValues);
-};
-
   return (
-    <div className="App">
-      <Container className='container-input' maxWidth="lg">
-        <Typography variant="h4" gutterBottom component="div">
-          Login User
-        </Typography>
-        <form onSubmit={
-      onSubmit
-        }>
-        <FormGroup>
-          <Input type='email' name='email' placeholder='mail@mail.com' onSubmit={onSubmit}/>
-        </FormGroup>
-        <FormGroup>
-          <Input type='password' name='password' placeholder='password' onSubmit={onSubmit}/>
-        </FormGroup>
-        <Button type='submit'>
-          <Typography variant="button" display="block" gutterBottom>
-          Entrar
-          </Typography>
-        </Button>
-        </form>
-      </Container>
+    <div className="App bg-gray-800 w-screen h-screen justify-around flex">
+      <div className="bg-gradient-to-r from-teal-600 via-purple-500 to-violet-600 w-screen h-16 flex justify-around p-4">
+        <div className="w-8/12 flex justify-around">
+          <a className="text-white" href="#"><HomeIcon/> INICIO</a>
+          <a className="text-white" href="#"><PodcastsIcon/> PODCASTS</a>
+          <a className="text-white" href="#"><HeadphonesIcon/> BIBLIOTECA</a>
+        </div>
+        <div className="w-4/12 flex space-x-6">
+          <form>
+            <FormGroup>
+              <Input type="search" name="search" placeholder="Search"/>
+            </FormGroup>
+          </form>
+          <a className="text-white" href="#"><NotificationsIcon/></a>
+          <a className="text-white" href="#"><SettingsIcon/></a>
+        </div>
+      </div>
     </div>
   );
 }
